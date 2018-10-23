@@ -1,0 +1,63 @@
+{
+	"endpoint": "/api/vpms",
+	"expectedParameters": [
+		{
+			"name": "age",
+			"type": "number",
+			"jsonpathPattern": "$.dob"
+		},
+		{
+			"name": "smoking",
+			"type": "boolean",
+			"jsonpathPattern": "$.smokingStatus"
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"jsonpathPattern": "$.gender"
+		}
+	],
+	"requestTemplate": "/resources/vpmsRequest.json",
+	"generatedParams": [
+		{
+			"name": "dob",
+			"type": "string",
+			"generatorMethod": "generateMSGId"
+		},
+		{
+			"name": "date",
+			"type": "string",
+			"generatorMethod": "generateDate"
+		}
+	],
+	"requestGeneratedParams": [
+		{
+			"name": "dob",
+			"type": "string",
+			"generatorMethod": "$.dob"
+		},
+		{
+			"name": "gender",
+			"type": "string",
+			"generatorMethod": "$.gender"
+		},
+		{
+			"name": "smokingStatus",
+			"type": "string",
+			"generatorMethod": "$.smokingStatus"
+		}
+	],
+	"esbResponseQueries": [
+		{
+			"name": "premiumAmount",
+			"jsonPath": "$.response.premiumAMount",
+			"type": "jsonArray"
+		},
+		{
+			"name": "period",
+			"jsonPath": "$.response.premiumPeriod",
+			"type": "String"
+		}
+	],
+	"responseMustacheTemplate": "/resources/vpmsResponse.json"
+}
