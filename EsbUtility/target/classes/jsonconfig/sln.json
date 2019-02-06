@@ -1,0 +1,63 @@
+{
+	"endpoint": "http://lead.apigw.pagekite.me/v1/vpms",
+	"expectedParameters": [
+		{
+			"name": "age",
+			"type": "number",
+			"jsonpathPattern": "$.dob"
+		},
+		{
+			"name": "smoking",
+			"type": "boolean",
+			"jsonpathPattern": "$.smokingStatus"
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"jsonpathPattern": "$.gender"
+		}
+	],
+	"requestTemplate": "sln_request.mustache",
+	"generatedParams": [
+		{
+			"name": "dob",
+			"type": "string",
+			"generatorMethod": "generateMSGId"
+		},
+		{
+			"name": "date",
+			"type": "string",
+			"generatorMethod": "generateDate"
+		}
+	],
+	"requestGeneratedParams": [
+		{
+			"name": "dob",
+			"type": "string",
+			"generatorMethod": "$.dob"
+		},
+		{
+			"name": "gender",
+			"type": "string",
+			"generatorMethod": "$.gender"
+		},
+		{
+			"name": "smokingStatus",
+			"type": "string",
+			"generatorMethod": "$.smokingStatus"
+		}
+	],
+	"esbResponseQueries": [
+		{
+			"name": "products",
+			"jsonPath": "$.quotationRes.products",
+			"type": "jsonArray"
+		},
+		{
+			"name": "hostsystem",
+			"jsonPath": "$.msgDetails.spId",
+			"type": "String"
+		}
+	],
+	"responseMustacheTemplate": "sln_response.mustache"
+}

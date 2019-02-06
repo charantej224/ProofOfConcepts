@@ -1,0 +1,16 @@
+server:
+  port: 3050
+  
+spring:
+  application:
+    name: EsbUtility
+    
+application:
+  apiKeys: sln,tan,xyz
+  
+logging:
+  level:
+    com.esbutility: debug
+    
+apiKey:
+  value: $.apiKey
